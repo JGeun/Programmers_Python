@@ -1,11 +1,15 @@
+N, K = map(int, input().split())
+result = 0
 
+while N >= K:
+   while N % K != 0:
+        N -= 1
+        result += 1
+   N //= K
+   result += 1
 
-def print_hi(name):
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+while N > 1:
+    N -= 1
+    result += 1
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(result)
